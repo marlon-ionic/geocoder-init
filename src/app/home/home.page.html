@@ -14,7 +14,19 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <strong>Enter an address or zip code below</strong>
+    <ion-input label="Address" label-placement="floating" fill="outline"  placeholder="Enter Address or Zip Code" [(ngModel)]="addressInput"></ion-input>
+    <ion-button size="large" [disabled]="!addressInput.length" (click)="geocode(addressInput)">
+      <ion-icon slot="icon-only" name="locate"></ion-icon>
+    </ion-button>
+
+    @if(geocodeResult){
+      <section class="result">
+        <p>{{geocodeResult.formatted_address}}</p>
+        <p>{{geocodeResult.geometry.location.toString()}}</p>
+      </section>
+    }
+
   </div>
+
 </ion-content>

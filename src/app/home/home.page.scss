@@ -1,11 +1,19 @@
 #container {
   text-align: center;
-
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   position: absolute;
   left: 0;
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+
+  ion-input {
+    max-width: 320px;
+  }
 }
 
 #container strong {
