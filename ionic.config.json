@@ -1,0 +1,7 @@
+{
+  "name": "geocoder-init",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
